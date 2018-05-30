@@ -1,0 +1,19 @@
+{
+    "screenshots":[
+        {
+            "img":"assets/images/SuperMarioBrosSnes.jpg",
+            "description":"imagen numero 1",
+            "liked": "0"
+        },
+        {
+            "img":"assets/images/DonkeyKongCountry2Diddy'sKongQuestSnes.jpg",
+            "description":"imagen numero 2",
+            "liked": "0"
+        },
+        {
+            "img":"assets/images/CronoTriggersnes.jpg",
+            "description":"imagen numero 3",
+            "liked": "0"
+        }
+    ]
+}

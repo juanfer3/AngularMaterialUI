@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <span>My App</span>
+  <span class="spacer"></span>
+  <!--Button Menu-->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <!--Menu-->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+
+</mat-toolbar>
+
+
+
+
+
+
+<!-- Navegador -->
+<mat-tab-group>
+  <!-- Link to Home -->
+  <mat-tab routerLink="/home">
+
+    <ng-template mat-tab-label >
+
+      <button mat-button routerLink="/home">Inicio</button>
+    </ng-template>
+  </mat-tab>
+  <!-- Link to User-->
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <button mat-button  routerLink="/users">Users</button>
+    </ng-template>
+  </mat-tab>
+  <!-- Link to Users id-->
+  <mat-tab routerLink="/users/1">
+
+    <ng-template mat-tab-label >
+
+      <button mat-button routerLink="/users/1">Inicio</button>
+    </ng-template>
+  </mat-tab>
+
+
+</mat-tab-group>
