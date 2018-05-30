@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   constructor(private route: ActivatedRoute, private myApi: MyServicesService) { }
   sub: any;
   public users: Array<Users>;
-  public user: Array<Users>;
+  public user: any = [];
   public mydata: any = [];
   ngOnInit() {
     /*this.usuario = this.usuariosService.getUsuarioId(Number (id));

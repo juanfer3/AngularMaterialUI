@@ -14,18 +14,17 @@ import { MyServicesService } from '../servicios/my-services.service';
 export class UsersComponent implements OnInit {
 
   title = 'app';
-  users: Array<Users>;
+  users: any = [];
 
   constructor(private myApi: MyServicesService) {
-    
   }
 
   ngOnInit() {
 
     const usuario = this.myApi.getUsers().subscribe(
-      data =>{
+      data => {
        this.users = data;
-       console.log("data")
+       console.log('data');
        console.log(this.users);
       } ,
       err => console.error(err),

@@ -28,7 +28,11 @@ import {
   MatCheckboxModule,
   MatMenuModule,
   MatListModule,
-  MatTableModule
+  MatTableModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatGridListModule
 } from '@angular/material';
 
 
@@ -45,6 +49,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { VideoGamesComponent } from './video-games/video-games.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -54,11 +59,13 @@ import { UserComponent } from './user/user.component';
     NavigationComponent,
     VideoGamesComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     routing,
     HttpClientModule,
     HttpModule,
@@ -71,7 +78,11 @@ import { UserComponent } from './user/user.component';
     MatCheckboxModule,
     MatMenuModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

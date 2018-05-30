@@ -1,0 +1,46 @@
+<p>
+  login works!
+</p>
+
+
+
+  <div class="example-container" >
+    <!--fORM-->
+  <form class="example-container" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <mat-form-field>
+      <input matInput placeholder="Input" name="user" id="user" ngModel>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea"></textarea>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select placeholder="Select" name="address" id="address" ngModel>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+
+    
+
+      <button type="submit" mat-button color="primary">Login</button>
+    
+      
+
+   </form>
+   
+    
+  </div>
+
+
+
+
+
