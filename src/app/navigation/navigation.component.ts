@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  mostrarMenu = false;
 
-  ngOnInit() {
+  constructor (private loguinService: LoginService) {
+
   }
 
+  ngOnInit () {
+    this.loguinService.mostrarMenu.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
+  }
 }

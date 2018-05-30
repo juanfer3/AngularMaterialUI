@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Routers */
 import { routing } from './app.routing';
@@ -50,6 +50,11 @@ import { VideoGamesComponent } from './video-games/video-games.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { UsersGuardService } from './guards/users.guard.service';
+import { GuardUsersService } from './guards/guard-users.service';
+import { PruebaGuard } from './guards/prueba.guard';
 
 
 @NgModule({
@@ -84,7 +89,14 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatGridListModule
   ],
-  providers: [],
+  providers:
+    [
+      LoginService,
+      AuthGuardService,
+      UsersGuardService,
+      GuardUsersService,
+      PruebaGuard
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
