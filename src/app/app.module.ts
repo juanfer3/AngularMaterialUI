@@ -55,6 +55,10 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { UsersGuardService } from './guards/users.guard.service';
 import { GuardUsersService } from './guards/guard-users.service';
 import { PruebaGuard } from './guards/prueba.guard';
+import { MyGuardGuard } from './guards/my-guard.guard';
+import { LoGuard } from './guards/lo.guard';
+import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -65,7 +69,9 @@ import { PruebaGuard } from './guards/prueba.guard';
     VideoGamesComponent,
     UsersComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    PageNoFoundComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +101,9 @@ import { PruebaGuard } from './guards/prueba.guard';
       AuthGuardService,
       UsersGuardService,
       GuardUsersService,
-      PruebaGuard
+      PruebaGuard,
+      MyGuardGuard,
+      LoGuard
     ],
   bootstrap: [AppComponent]
 })

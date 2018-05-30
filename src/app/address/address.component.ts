@@ -6,12 +6,11 @@ import { MyServicesService } from '../servicios/my-services.service';
 import { Users } from '../model/users';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss'],
-  providers: [MyServicesService]
+  selector: 'app-address',
+  templateUrl: './address.component.html',
+  styleUrls: ['./address.component.scss']
 })
-export class UserComponent implements OnInit {
+export class AddressComponent implements OnInit {
 
   usuario: any;
   constructor(private route: ActivatedRoute, private router: Router, private myApi: MyServicesService) { }
@@ -19,34 +18,26 @@ export class UserComponent implements OnInit {
   public users: Array<Users>;
   public user: any = [];
   public mydata: any = [];
+  id: any;
   ngOnInit() {
-    /*this.usuario = this.usuariosService.getUsuarioId(Number (id));
-    this.sub = this.route.params.subscribe(params => {
-     const id = params['id'];
-      console.log(id);
-    });*/
-
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.myApi.getUserId(Number(id)).subscribe(
+    /* Tomar id del la url */
+    this.route.parent.params.subscribe(params =>{
+      this.id = params['id'];
+      console.log('Este es el ID: ' + this.id);
+      
+    }); // Object {}
+    
+    console.log('estamos en las direcciones' + this.id);
+    this.myApi.getUserId(Number(this.id)).subscribe(
       data => {
         this.user = data;
         console.log('data');
         console.log(this.user);
       },
       err => console.error(err),
-      () => console.log('done loading foods')
+      () => console.log('estas son las direcciones')
     );
 
-
-
   }
-
-
-  verAddress() {
-    console.log('ver Direcciones');
-    this.router.navigate(['address'], { relativeTo: this.route });
-  }
-
 
 }

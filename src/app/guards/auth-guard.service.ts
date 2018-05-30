@@ -23,7 +23,7 @@ export class AuthGuardService implements CanActivate{
 
 
     if (this.autService.usuarioAutenticado()) {
-      console.log('Mensaje');
+      console.log('=====Mensaje=====');
       return true;
     }
 

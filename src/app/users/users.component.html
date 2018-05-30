@@ -1,16 +1,33 @@
 <table>
-    <thead>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Users</th>
-      <th>Dirección</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td> <button mat-button routerLink="/users/{{user.id}}">{{user.id}}</button>  </td>
-        <td> <button mat-button routerLink="/users/{{user.id}}"> {{user.name}} </button></td>
-        <td> <button mat-button routerLink="/users/{{user.id}}"> {{user.username}} </button></td>
-        <td> <button mat-button routerLink="/users/{{user.id}}">{{user.address.city}} </button></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Users</th>
+    <th>Dirección</th>
+    <th>verDirecciones</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>
+        <button mat-button routerLink="/users/{{user.id}}">{{user.id}}</button>
+      </td>
+      <td>
+        <button mat-button routerLink="/users/{{user.id}}"> {{user.name}} </button>
+      </td>
+      <td>
+        <button mat-button routerLink="/users/{{user.id}}"> {{user.username}} </button>
+      </td>
+      <td>
+        <button mat-button routerLink="/users/{{user.id}}">{{user.address.city}} </button>
+      </td>
+      <td>
+          <button mat-button>
+            <mat-icon >code
+          </mat-icon></button>
+
+          
+   
+      </td>
+    </tr>
+  </tbody>
+</table>

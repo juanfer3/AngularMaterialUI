@@ -1,4 +1,5 @@
-import { CanActivateChild } from '@angular/router';
+import { AddressComponent } from './address/address.component';
+import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,22 +13,29 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { UsersGuardService } from './guards/users.guard.service';
 import { GuardUsersService } from './guards/guard-users.service';
 import { PruebaGuard } from './guards/prueba.guard';
+import { MyGuardGuard } from './guards/my-guard.guard';
 
 const App_Routes: Routes = [
-  { path: 'home', component: HomeComponent },
   {
-    path: 'users', 
+    path: 'home', component: HomeComponent,
+    canActivateChild: [MyGuardGuard]
+  },
+  {
+    path: 'users',
     /*loadChildren: 'app/users/users.module#UsersModule',*/
     component: UsersComponent,
     canActivate: [AuthGuardService],
-    canActivateChild: [PruebaGuard]
+    canActivateChild: [MyGuardGuard]
   },
   {
     path: 'users/:id', component: UserComponent,
     canActivate: [AuthGuardService],
-    canActivateChild: [PruebaGuard]
+    children: [
+      { path: 'address', component: AddressComponent },
+    ]
   },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: PageNoFoundComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(App_Routes);
